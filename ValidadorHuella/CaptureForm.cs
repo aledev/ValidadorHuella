@@ -17,7 +17,7 @@ namespace ValidadorHuella
 
 		public CaptureForm()
 		{
-            InitializeComponent();
+            		InitializeComponent();
 		}
 
         /// <summary>
@@ -35,19 +35,19 @@ namespace ValidadorHuella
 
 		protected virtual void Init()
 		{
-            try
-            {
-                Capturer = new DPFP.Capture.Capture();				// Create a capture operation.
+		    try
+		    {
+			Capturer = new DPFP.Capture.Capture();				// Create a capture operation.
 
-                if ( null != Capturer )
-                    Capturer.EventHandler = this;					// Subscribe for capturing events.
-                else
-                    SetPrompt("Can't initiate capture operation!");
-            }
-            catch
-            {               
-                MessageBox.Show("Can't initiate capture operation!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);            
-            }
+			if ( null != Capturer )
+			    Capturer.EventHandler = this;					// Subscribe for capturing events.
+			else
+			    SetPrompt("Can't initiate capture operation!");
+		    }
+		    catch
+		    {               
+			MessageBox.Show("Can't initiate capture operation!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);            
+		    }
 		}
 
 		protected virtual void Process(DPFP.Sample Sample)
